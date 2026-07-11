@@ -151,11 +151,24 @@ Raw DB tables (purchases, sales, vendor_invoice, purchase_prices — 15M+ rows)
    ```bash
    pip install pandas numpy scipy scikit-learn matplotlib seaborn openpyxl
    ```
-2. Run **`Part1_SQL_Python.ipynb`** first — it builds the SQLite database, runs the SQL aggregation, cleans the data, and saves `vendor_sales_summary_clean.csv`.
-3. Run **`Part2_EDA_Stats_ML.ipynb`** — it reads the output of Part 1 and runs EDA, statistical tests, clustering, and regression.
-4. Open `Vendor_Performance_Dashboard.xlsx` to see the final KPI dashboard built on the same data.
 
-> Note: the original raw tables (`purchases`, `sales`, `vendor_invoice`, `purchase_prices` — 15M+ rows) are not included in this repo due to size. Both notebooks reproduce the exact SQL/Python logic that was run against the full database, executed here against the already-aggregated summary table, so every cell runs end-to-end and produces verifiable output.
+### Option A: Run via Standalone Python Pipelines (Production Ready)
+1. Run the cleaning and feature engineering pipeline:
+   ```bash
+   python clean_pipeline.py
+   ```
+2. Run the statistical analysis and machine learning pipeline:
+   ```bash
+   python stats_ml_pipeline.py
+   ```
+
+### Option B: Run via Interactive Jupyter Notebooks
+1. Run **`Vendor's_Performance_Analysis_SQL_Python.ipynb`** (Part 1) — it builds the SQLite database, runs the SQL aggregation, cleans the data, and saves `vendor_sales_summary_clean.csv`.
+2. Run **`Vendor_Performance_Analytics_EDA_Stats_ML.ipynb`** (Part 2) — it reads the output of Part 1 and runs EDA, statistical tests, clustering, and regression.
+
+Open `Vendor_Performance_Dashboard.xlsx` to see the final KPI dashboard built on the same data.
+
+> Note: the original raw tables (`purchases`, `sales`, `vendor_invoice`, `purchase_prices` — 15M+ rows) are not included in this repo due to size. Both notebooks and pipelines reproduce the exact SQL/Python logic that was run against the full database, executed here against the already-aggregated summary table, so they run end-to-end and produce verifiable output.
 
 ---
 
