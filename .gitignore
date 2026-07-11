@@ -1,0 +1,14 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Database
+vendor.db
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Large/generated data files (optional to ignore, but safe)
+# *.csv
+# *.xlsx

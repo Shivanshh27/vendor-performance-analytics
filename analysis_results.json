@@ -1,0 +1,104 @@
+{
+  "statistics": {
+    "ttest_top_vs_bottom_sales_tier": {
+      "top_n": 60,
+      "bottom_n": 59,
+      "top_mean_margin": 21.11,
+      "bottom_mean_margin": 20.6,
+      "t_statistic": 1.709,
+      "p_value": 0.09034,
+      "significant_at_0.05": false
+    },
+    "correlation_matrix": {
+      "TotalSalesDollars": {
+        "TotalSalesDollars": 1.0,
+        "GrossProfit": 1.0,
+        "ProfitMargin": 0.004,
+        "StockTurnover": 0.05,
+        "UnsoldCapital": 1.0
+      },
+      "GrossProfit": {
+        "TotalSalesDollars": 1.0,
+        "GrossProfit": 1.0,
+        "ProfitMargin": 0.005,
+        "StockTurnover": 0.05,
+        "UnsoldCapital": 0.999
+      },
+      "ProfitMargin": {
+        "TotalSalesDollars": 0.004,
+        "GrossProfit": 0.005,
+        "ProfitMargin": 1.0,
+        "StockTurnover": 0.734,
+        "UnsoldCapital": 0.002
+      },
+      "StockTurnover": {
+        "TotalSalesDollars": 0.05,
+        "GrossProfit": 0.05,
+        "ProfitMargin": 0.734,
+        "StockTurnover": 1.0,
+        "UnsoldCapital": 0.049
+      },
+      "UnsoldCapital": {
+        "TotalSalesDollars": 1.0,
+        "GrossProfit": 0.999,
+        "ProfitMargin": 0.002,
+        "StockTurnover": 0.049,
+        "UnsoldCapital": 1.0
+      }
+    }
+  },
+  "clustering": {
+    "algorithm": "KMeans (k=3, standardized, log-scaled dollar features)",
+    "features_used": [
+      "LogSales",
+      "LogGrossProfit",
+      "ProfitMargin",
+      "StockTurnoverCapped"
+    ],
+    "silhouette_score": 0.448,
+    "cluster_profile_means": {
+      "High Performer": {
+        "TotalSalesDollars": 177088841.5,
+        "GrossProfit": 39574039.95,
+        "ProfitMargin": 20.76,
+        "StockTurnover": 0.9
+      },
+      "Low Performer": {
+        "TotalSalesDollars": 527714.92,
+        "GrossProfit": 107222.41,
+        "ProfitMargin": 19.13,
+        "StockTurnover": 0.88
+      },
+      "Mid Performer": {
+        "TotalSalesDollars": 580013.58,
+        "GrossProfit": 134179.67,
+        "ProfitMargin": 21.81,
+        "StockTurnover": 0.9
+      }
+    },
+    "vendor_counts": {
+      "Mid Performer": 72,
+      "Low Performer": 39,
+      "High Performer": 8
+    }
+  },
+  "regression": {
+    "target": "ProfitMargin (%)",
+    "features": [
+      "FreightCost",
+      "StockTurnover",
+      "BrandCount",
+      "AvgPurchasePrice",
+      "AvgActualPrice"
+    ],
+    "r2_score": 0.001,
+    "intercept": 20.41,
+    "coefficients": {
+      "FreightCost": 0.0,
+      "StockTurnover": -0.0,
+      "BrandCount": -0.0004,
+      "AvgPurchasePrice": 0.0038,
+      "AvgActualPrice": 0.0053
+    }
+  }
+}
