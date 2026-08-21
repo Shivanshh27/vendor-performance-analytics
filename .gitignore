@@ -12,3 +12,7 @@ vendor.db
 # Large/generated data files (optional to ignore, but safe)
 # *.csv
 # *.xlsx
+
+# Study Files
+study*
+
